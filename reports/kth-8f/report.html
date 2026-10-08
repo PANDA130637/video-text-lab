@@ -1,0 +1,31 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>视频文本实验</title><style>body{font:16px/1.8 system-ui;background:#f3f6f8;color:#182d3d;margin:32px auto;max-width:1100px;padding:20px}table{border-collapse:collapse;background:white;width:100%}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left}pre{white-space:pre-wrap;font:inherit}.notice{background:#fff0d5;padding:16px;border-radius:10px}.table{overflow:auto}a{color:#176d59}</style><h1>视频文本检索 · 固定协议实验</h1><p class="notice">KTH 三类动作、d1 场景、整段 AVI；使用官方人物划分。文本由动作标签转成固定英文描述。</p><p>{&#x27;val&#x27;: 24, &#x27;test&#x27;: 27, &#x27;train&#x27;: 24}</p><div class="table"><table><tr><th>模型</th><th>种子</th><th>可训练参数</th><th>视频→文本 R@1</th><th>文本→视频 R@1</th><th>打乱帧后</th></tr><tr><td>frozen_clip_mean</td><td>—</td><td>0</td><td>33.3%</td><td>66.7%</td><td>—</td></tr><tr><td>frozen_clip_middle_frame</td><td>—</td><td>0</td><td>37.0%</td><td>66.7%</td><td>—</td></tr><tr><td>mean</td><td>17</td><td>32832</td><td>74.1%</td><td>100.0%</td><td>74.1%</td></tr><tr><td>mean</td><td>42</td><td>32832</td><td>63.0%</td><td>100.0%</td><td>63.0%</td></tr><tr><td>mean</td><td>123</td><td>32832</td><td>70.4%</td><td>100.0%</td><td>70.4%</td></tr><tr><td>mlp</td><td>17</td><td>129263</td><td>74.1%</td><td>66.7%</td><td>74.1%</td></tr><tr><td>mlp</td><td>42</td><td>129263</td><td>70.4%</td><td>100.0%</td><td>70.4%</td></tr><tr><td>mlp</td><td>123</td><td>129263</td><td>74.1%</td><td>100.0%</td><td>74.1%</td></tr><tr><td>gru</td><td>17</td><td>129472</td><td>74.1%</td><td>66.7%</td><td>66.7%</td></tr><tr><td>gru</td><td>42</td><td>129472</td><td>74.1%</td><td>100.0%</td><td>70.4%</td></tr><tr><td>gru</td><td>123</td><td>129472</td><td>77.8%</td><td>100.0%</td><td>70.4%</td></tr></table></div><pre>## 跨种子汇总（视频→文本 R@1）
+
+- mean：均值 69.1%，种子间标准差 4.6%。
+- mlp：均值 72.8%，种子间标准差 1.7%。
+- gru：均值 75.3%，种子间标准差 1.7%。
+
+## 固定展示的失败案例
+
+使用预先列出的第一个 GRU 种子，不按测试分数挑选运行。以下为其误检：
+
+- person03_boxing_d1_uncomp：真实 boxing → 预测 handclapping。
+- person03_handwaving_d1_uncomp：真实 handwaving → 预测 handclapping。
+- person05_handwaving_d1_uncomp：真实 handwaving → 预测 handclapping。
+- person08_handwaving_d1_uncomp：真实 handwaving → 预测 handclapping。
+- person09_handwaving_d1_uncomp：真实 handwaving → 预测 handclapping。
+- person10_handwaving_d1_uncomp：真实 handwaving → 预测 handclapping。
+- person22_handwaving_d1_uncomp：真实 handwaving → 预测 handclapping。
+
+## 解释边界
+
+- MLP 对帧顺序不敏感，参数量与 GRU 接近，用于控制模型容量因素。
+- 测试集不用于选择训练轮数或超参数；每个运行都由验证集选择检查点。
+- 同一人物的所有动作仅处于一个 split；未将同源视频随机拆到多个集合。
+- 三类文本候选下 R@5/R@10 没有区分价值，因此主表仅展示 R@1。
+- 文本→视频有多个正确视频；其 R@1 不等于视频分类准确率。
+- 没有显式动作顺序对照标注，因此不计算顺序准确率。打乱帧仅为诊断。
+- 同一划分的三个种子不代表跨数据集置信区间；小测试集结果应谨慎外推。
+- 结果提升还需更大数据、更多动作和背景变化验证；如 GRU 不优于 MLP，应如实保留该结论。
+
+数据：[KTH 官方来源](https://www.csc.kth.se/cvap/actions/)，仅非商业使用；引用 Schuldt、Laptev、Caputo，ICPR 2004。
+</pre><p><a href="results.json">完整结果</a> · <a href="protocol.json">预先固定的协议</a> · <a href="summary.csv">结果表</a></p><h2>固定 GRU 种子的误检样例</h2><p>每行从原视频均匀抽取四帧；标签来自数据集，预测来自该次测试。</p><img alt="Misclassified videos with true and predicted labels" style="max-width:100%" src="failures.jpg">

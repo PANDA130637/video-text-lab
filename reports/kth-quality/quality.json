@@ -1,0 +1,539 @@
+{
+  "protocol": {
+    "split": "test",
+    "flicker_threshold": 0.85,
+    "bootstrap_samples": 2000,
+    "seed": 2026,
+    "score_formula": "100 * (0.65 * alignment_score + 0.35 * stability_score)",
+    "alignment_score": "clip((mean frame-text cosine + 1) / 2, 0, 1)",
+    "stability_score": "clip((mean adjacent-frame cosine + 1) / 2, 0, 1)",
+    "notice": "Heuristic diagnostic; not a human-calibrated perceptual quality score."
+  },
+  "summary": {
+    "videos": 27,
+    "quality_score_mean": 74.23171285677839,
+    "quality_score_std": 0.5146809995904151,
+    "alignment_mean": 0.23959294292661878,
+    "temporal_adjacent_cosine": 0.939710983523616,
+    "flicker_rate": 0.021164021164021163,
+    "quality_score_ci95": [
+      74.0339882488328,
+      74.42725613613233
+    ],
+    "alignment_mean_ci95": [
+      0.23415513347696373,
+      0.24516671036404591
+    ],
+    "temporal_adjacent_cosine_ci95": [
+      0.9312297424784413,
+      0.947524918615818
+    ]
+  },
+  "by_semantic_id": {
+    "boxing": {
+      "videos": 9,
+      "quality_score_mean": 73.76944024943643,
+      "quality_score_ci95": [
+        73.53017040569749,
+        73.94665577076375
+      ],
+      "alignment_mean": 0.22436492145061493,
+      "temporal_adjacent_cosine": 0.9415760172737969,
+      "flicker_rate": 0.015873015873015872
+    },
+    "handclapping": {
+      "videos": 9,
+      "quality_score_mean": 74.42779794749286,
+      "quality_score_ci95": [
+        74.20249648578465,
+        74.64216508354163
+      ],
+      "alignment_mean": 0.23999777932961783,
+      "temporal_adjacent_cosine": 0.9501640068160163,
+      "flicker_rate": 0.0
+    },
+    "handwaving": {
+      "videos": 9,
+      "quality_score_mean": 74.49790037340588,
+      "quality_score_ci95": [
+        74.18728654935128,
+        74.83494587842789
+      ],
+      "alignment_mean": 0.2544161279996236,
+      "temporal_adjacent_cosine": 0.927392926481035,
+      "flicker_rate": 0.047619047619047616
+    }
+  },
+  "videos": [
+    {
+      "id": "person02_boxing_d1_uncomp",
+      "group_id": "person02",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.23229478299617767,
+      "alignment_p10": 0.22588950395584106,
+      "temporal_adjacent_cosine": 0.9353298544883728,
+      "temporal_adjacent_std": 0.0232471264898777,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6161473914980888,
+      "stability_score": 0.9676649272441864,
+      "quality_score": 73.9178529009223
+    },
+    {
+      "id": "person02_handclapping_d1_uncomp",
+      "group_id": "person02",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.2456628382205963,
+      "alignment_p10": 0.23383742570877075,
+      "temporal_adjacent_cosine": 0.9455059766769409,
+      "temporal_adjacent_std": 0.023066136986017227,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6228314191102982,
+      "stability_score": 0.9727529883384705,
+      "quality_score": 74.53039683401585
+    },
+    {
+      "id": "person02_handwaving_d1_uncomp",
+      "group_id": "person02",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.25652414560317993,
+      "alignment_p10": 0.24640074372291565,
+      "temporal_adjacent_cosine": 0.9390462040901184,
+      "temporal_adjacent_std": 0.009703260846436024,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.62826207280159,
+      "stability_score": 0.9695231020450592,
+      "quality_score": 74.77034330368042
+    },
+    {
+      "id": "person03_boxing_d1_uncomp",
+      "group_id": "person03",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.2292066514492035,
+      "alignment_p10": 0.22296611964702606,
+      "temporal_adjacent_cosine": 0.9538346529006958,
+      "temporal_adjacent_std": 0.015155673958361149,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6146033257246017,
+      "stability_score": 0.9769173264503479,
+      "quality_score": 74.14132259786129
+    },
+    {
+      "id": "person03_handclapping_d1_uncomp",
+      "group_id": "person03",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.24220499396324158,
+      "alignment_p10": 0.2338687628507614,
+      "temporal_adjacent_cosine": 0.9451181292533875,
+      "temporal_adjacent_std": 0.012047878466546535,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6211024969816208,
+      "stability_score": 0.9725590646266937,
+      "quality_score": 74.41122956573962
+    },
+    {
+      "id": "person03_handwaving_d1_uncomp",
+      "group_id": "person03",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.24988800287246704,
+      "alignment_p10": 0.23924441635608673,
+      "temporal_adjacent_cosine": 0.9354165196418762,
+      "temporal_adjacent_std": 0.024127960205078125,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6249440014362335,
+      "stability_score": 0.9677082598209381,
+      "quality_score": 74.49114918708801
+    },
+    {
+      "id": "person05_boxing_d1_uncomp",
+      "group_id": "person05",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.2261234074831009,
+      "alignment_p10": 0.22289900481700897,
+      "temporal_adjacent_cosine": 0.9533838629722595,
+      "temporal_adjacent_std": 0.015356021001935005,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6130617037415504,
+      "stability_score": 0.9766919314861298,
+      "quality_score": 74.03322834521532
+    },
+    {
+      "id": "person05_handclapping_d1_uncomp",
+      "group_id": "person05",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.2287798970937729,
+      "alignment_p10": 0.2192666381597519,
+      "temporal_adjacent_cosine": 0.9641693830490112,
+      "temporal_adjacent_std": 0.009812035597860813,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6143899485468864,
+      "stability_score": 0.9820846915245056,
+      "quality_score": 74.30831085890532
+    },
+    {
+      "id": "person05_handwaving_d1_uncomp",
+      "group_id": "person05",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.2649361193180084,
+      "alignment_p10": 0.25811633467674255,
+      "temporal_adjacent_cosine": 0.9569243788719177,
+      "temporal_adjacent_std": 0.020794149488210678,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6324680596590042,
+      "stability_score": 0.9784621894359589,
+      "quality_score": 75.35660050809383
+    },
+    {
+      "id": "person06_boxing_d1_uncomp",
+      "group_id": "person06",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.21873588860034943,
+      "alignment_p10": 0.20993149280548096,
+      "temporal_adjacent_cosine": 0.9449920654296875,
+      "temporal_adjacent_std": 0.015093430876731873,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6093679443001747,
+      "stability_score": 0.9724960327148438,
+      "quality_score": 73.64627752453087
+    },
+    {
+      "id": "person06_handclapping_d1_uncomp",
+      "group_id": "person06",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.25792592763900757,
+      "alignment_p10": 0.24612486362457275,
+      "temporal_adjacent_cosine": 0.9333958029747009,
+      "temporal_adjacent_std": 0.020765036344528198,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6289629638195038,
+      "stability_score": 0.9666979014873505,
+      "quality_score": 74.71701920032501
+    },
+    {
+      "id": "person06_handwaving_d1_uncomp",
+      "group_id": "person06",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.26655662059783936,
+      "alignment_p10": 0.2613975703716278,
+      "temporal_adjacent_cosine": 0.9182178378105164,
+      "temporal_adjacent_std": 0.0332833006978035,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6332783102989197,
+      "stability_score": 0.9591089189052582,
+      "quality_score": 74.73190233111382
+    },
+    {
+      "id": "person07_boxing_d1_uncomp",
+      "group_id": "person07",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.2376847118139267,
+      "alignment_p10": 0.2312159538269043,
+      "temporal_adjacent_cosine": 0.9274764060974121,
+      "temporal_adjacent_std": 0.022115226835012436,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6188423559069633,
+      "stability_score": 0.963738203048706,
+      "quality_score": 73.95559024065732
+    },
+    {
+      "id": "person07_handclapping_d1_uncomp",
+      "group_id": "person07",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.24588042497634888,
+      "alignment_p10": 0.24139128625392914,
+      "temporal_adjacent_cosine": 0.9726942181587219,
+      "temporal_adjacent_std": 0.009149953722953796,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6229402124881744,
+      "stability_score": 0.986347109079361,
+      "quality_score": 75.01326262950897
+    },
+    {
+      "id": "person07_handwaving_d1_uncomp",
+      "group_id": "person07",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.25565454363822937,
+      "alignment_p10": 0.23561714589595795,
+      "temporal_adjacent_cosine": 0.881230890750885,
+      "temporal_adjacent_std": 0.04560602083802223,
+      "flicker_rate": 0.2857142857142857,
+      "alignment_score": 0.6278272718191147,
+      "stability_score": 0.9406154453754425,
+      "quality_score": 73.73031325638294
+    },
+    {
+      "id": "person08_boxing_d1_uncomp",
+      "group_id": "person08",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.21301013231277466,
+      "alignment_p10": 0.20523416996002197,
+      "temporal_adjacent_cosine": 0.9612473249435425,
+      "temporal_adjacent_std": 0.008899187669157982,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6065050661563873,
+      "stability_score": 0.9806236624717712,
+      "quality_score": 73.74465748667718
+    },
+    {
+      "id": "person08_handclapping_d1_uncomp",
+      "group_id": "person08",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.2354583740234375,
+      "alignment_p10": 0.22016099095344543,
+      "temporal_adjacent_cosine": 0.9411392211914062,
+      "temporal_adjacent_std": 0.02182868681848049,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6177291870117188,
+      "stability_score": 0.9705696105957031,
+      "quality_score": 74.12233352661133
+    },
+    {
+      "id": "person08_handwaving_d1_uncomp",
+      "group_id": "person08",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.24577367305755615,
+      "alignment_p10": 0.2351517677307129,
+      "temporal_adjacent_cosine": 0.9034062027931213,
+      "temporal_adjacent_std": 0.04279795289039612,
+      "flicker_rate": 0.14285714285714285,
+      "alignment_score": 0.6228868365287781,
+      "stability_score": 0.9517031013965607,
+      "quality_score": 73.79725292325018
+    },
+    {
+      "id": "person09_boxing_d1_uncomp",
+      "group_id": "person09",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.21678587794303894,
+      "alignment_p10": 0.21239441633224487,
+      "temporal_adjacent_cosine": 0.9531192779541016,
+      "temporal_adjacent_std": 0.016765834763646126,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6083929389715195,
+      "stability_score": 0.9765596389770508,
+      "quality_score": 73.72512839734554
+    },
+    {
+      "id": "person09_handclapping_d1_uncomp",
+      "group_id": "person09",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.23390161991119385,
+      "alignment_p10": 0.22395245730876923,
+      "temporal_adjacent_cosine": 0.920284628868103,
+      "temporal_adjacent_std": 0.020815594121813774,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6169508099555969,
+      "stability_score": 0.9601423144340515,
+      "quality_score": 73.7067836523056
+    },
+    {
+      "id": "person09_handwaving_d1_uncomp",
+      "group_id": "person09",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.24545571208000183,
+      "alignment_p10": 0.2218504250049591,
+      "temporal_adjacent_cosine": 0.9234749674797058,
+      "temporal_adjacent_std": 0.019653359428048134,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6227278560400009,
+      "stability_score": 0.9617374837398529,
+      "quality_score": 74.13812257349491
+    },
+    {
+      "id": "person10_boxing_d1_uncomp",
+      "group_id": "person10",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.22228339314460754,
+      "alignment_p10": 0.21842168271541595,
+      "temporal_adjacent_cosine": 0.9471971392631531,
+      "temporal_adjacent_std": 0.021412456408143044,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6111416965723038,
+      "stability_score": 0.9735985696315765,
+      "quality_score": 73.80016021430492
+    },
+    {
+      "id": "person10_handclapping_d1_uncomp",
+      "group_id": "person10",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.23861250281333923,
+      "alignment_p10": 0.22723370790481567,
+      "temporal_adjacent_cosine": 0.9543890953063965,
+      "temporal_adjacent_std": 0.01714256964623928,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6193062514066696,
+      "stability_score": 0.9771945476531982,
+      "quality_score": 74.45671550929546
+    },
+    {
+      "id": "person10_handwaving_d1_uncomp",
+      "group_id": "person10",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.254312664270401,
+      "alignment_p10": 0.2330230176448822,
+      "temporal_adjacent_cosine": 0.9482098817825317,
+      "temporal_adjacent_std": 0.012514148838818073,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6271563321352005,
+      "stability_score": 0.9741049408912659,
+      "quality_score": 74.85883451998234
+    },
+    {
+      "id": "person22_boxing_d1_uncomp",
+      "group_id": "person22",
+      "split": "test",
+      "semantic_id": "boxing",
+      "text": "A person is boxing.",
+      "alignment_mean": 0.22315944731235504,
+      "alignment_p10": 0.21007654070854187,
+      "temporal_adjacent_cosine": 0.8976035714149475,
+      "temporal_adjacent_std": 0.03991217538714409,
+      "flicker_rate": 0.14285714285714285,
+      "alignment_score": 0.6115797236561775,
+      "stability_score": 0.9488017857074738,
+      "quality_score": 72.96074453741312
+    },
+    {
+      "id": "person22_handclapping_d1_uncomp",
+      "group_id": "person22",
+      "split": "test",
+      "semantic_id": "handclapping",
+      "text": "A person is clapping their hands.",
+      "alignment_mean": 0.23155343532562256,
+      "alignment_p10": 0.2250898778438568,
+      "temporal_adjacent_cosine": 0.9747796058654785,
+      "temporal_adjacent_std": 0.010936371050775051,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6157767176628113,
+      "stability_score": 0.9873898029327393,
+      "quality_score": 74.58412975072861
+    },
+    {
+      "id": "person22_handwaving_d1_uncomp",
+      "group_id": "person22",
+      "split": "test",
+      "semantic_id": "handwaving",
+      "text": "A person is waving their hands.",
+      "alignment_mean": 0.25064367055892944,
+      "alignment_p10": 0.23743698000907898,
+      "temporal_adjacent_cosine": 0.9406094551086426,
+      "temporal_adjacent_std": 0.025260433554649353,
+      "flicker_rate": 0.0,
+      "alignment_score": 0.6253218352794647,
+      "stability_score": 0.9703047275543213,
+      "quality_score": 74.60658475756645
+    }
+  ],
+  "diagnostics": {
+    "split": "test",
+    "seed": 2026,
+    "clean": {
+      "videos": 27,
+      "quality_score_mean": 74.23171285677839,
+      "quality_score_std": 0.5146809995904151,
+      "alignment_mean": 0.23959294292661878,
+      "temporal_adjacent_cosine": 0.939710983523616,
+      "flicker_rate": 0.021164021164021163,
+      "quality_score_ci95": [
+        74.0339882488328,
+        74.42725613613233
+      ],
+      "alignment_mean_ci95": [
+        0.23415513347696373,
+        0.24516671036404591
+      ],
+      "temporal_adjacent_cosine_ci95": [
+        0.9312297424784413,
+        0.947524918615818
+      ]
+    },
+    "shuffled_frames": {
+      "videos": 27,
+      "quality_score_mean": 74.19395031890383,
+      "quality_score_std": 0.4884980887847176,
+      "alignment_mean": 0.23959294347851365,
+      "temporal_adjacent_cosine": 0.9375531231915509,
+      "flicker_rate": 0.010582010582010581,
+      "quality_score_ci95": [
+        74.00557011303803,
+        74.37873923040375
+      ],
+      "alignment_mean_ci95": [
+        0.23415513564315107,
+        0.245166711481633
+      ],
+      "temporal_adjacent_cosine_ci95": [
+        0.9315745036359186,
+        0.9433085445452619
+      ]
+    },
+    "cross_video_flicker": {
+      "videos": 27,
+      "quality_score_mean": 73.05984394555843,
+      "quality_score_std": 0.8111739611308003,
+      "alignment_mean": 0.2387798124993289,
+      "temporal_adjacent_cosine": 0.8742571451045849,
+      "flicker_rate": 0.3386243386243386,
+      "quality_score_ci95": [
+        72.74084268330975,
+        73.35602059691317
+      ],
+      "alignment_mean_ci95": [
+        0.23356662970726136,
+        0.24408927208019626
+      ],
+      "temporal_adjacent_cosine_ci95": [
+        0.8566498921425254,
+        0.891733796177087
+      ]
+    },
+    "interpretation": "Controls are diagnostics, not proof that a metric matches human preference."
+  }
+}\n

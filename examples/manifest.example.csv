@@ -1,0 +1,7 @@
+id,group_id,split,video_path,text,semantic_id,pair_id,source
+train_01_a,session_01,train,../data/real/session_01_a.mp4,A person picks up a cup then opens a box.,cup_then_box,session_01_pair,real_recording
+train_01_b,session_01,train,../data/real/session_01_b.mp4,A person opens a box then picks up a cup.,box_then_cup,session_01_pair,real_recording
+val_02_a,session_02,val,../data/real/session_02_a.mp4,A person picks up a cup then opens a box.,cup_then_box,session_02_pair,real_recording
+val_02_b,session_02,val,../data/real/session_02_b.mp4,A person opens a box then picks up a cup.,box_then_cup,session_02_pair,real_recording
+test_03_a,session_03,test,../data/real/session_03_a.mp4,A person picks up a cup then opens a box.,cup_then_box,session_03_pair,real_recording
+test_03_b,session_03,test,../data/real/session_03_b.mp4,A person opens a box then picks up a cup.,box_then_cup,session_03_pair,real_recording

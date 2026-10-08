@@ -1,0 +1,3 @@
+# Optional: only needed for actual video files and the frozen CLIP encoder.
+opencv-python-headless>=4.10,<5
+transformers>=4.45,<5

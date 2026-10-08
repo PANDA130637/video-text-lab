@@ -1,0 +1,12 @@
+.venv/
+.deps/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+runs/
+.cache/
+*.egg-info/
+
+# Local interview notes are intentionally kept outside the public repository.
+docs/interview-notes.md

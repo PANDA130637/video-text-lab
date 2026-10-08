@@ -1,0 +1,57 @@
+{
+  "cache": "data\\kth\\features_8f.npz",
+  "provenance": {
+    "extractor_version": "2",
+    "encoder": "clip",
+    "frames": 8,
+    "device": "cpu",
+    "model_name": "openai/clip-vit-base-patch32",
+    "source": "user_provided",
+    "synthetic": false,
+    "fingerprint": "bd8165855569572f6dabc06297b23dd8a9ad016e711bb6b423037d6c7a64d219",
+    "manifest_path": "data\\kth\\manifest.csv",
+    "videos": 75,
+    "video_shape": [
+      75,
+      8,
+      512
+    ],
+    "text_shape": [
+      75,
+      512
+    ],
+    "extraction_seconds": 34.9529,
+    "warning": "User-provided data; verify rights and split grouping."
+  },
+  "epochs": 40,
+  "seeds": [
+    17,
+    42,
+    123
+  ],
+  "models": [
+    "mean",
+    "mlp",
+    "gru"
+  ],
+  "batch_size": 32,
+  "lr": 0.003,
+  "threads": 4,
+  "device": "cpu",
+  "shuffle_seed": 2026,
+  "checkpoint_selection": "val mean bidirectional Recall@1, then val loss",
+  "test_policy": "Configuration written before training; all test evaluations follow all training.",
+  "dataset_sources": [
+    "KTH_official_d1_three_actions"
+  ],
+  "records_by_split": {
+    "val": 24,
+    "test": 27,
+    "train": 24
+  },
+  "groups_by_split": {
+    "train": 8,
+    "val": 8,
+    "test": 9
+  }
+}\n
